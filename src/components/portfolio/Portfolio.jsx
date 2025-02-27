@@ -1,14 +1,13 @@
+import React from "react";
+import { motion } from "framer-motion";
 import "./portfolio.css";
-
 import IMG1 from "../../assets/chatbot.png";
 import IMG2 from "../../assets/crick.png";
 import IMG3 from "../../assets/music_recommend.png";
 import IMG4 from "../../assets/prison.jpg";
 import IMG5 from "../../assets/music_lib.png";
 import IMG6 from "../../assets/ems.png";
-import React from "react";
 
-//Portfolio function
 const Portfolio = () => {
   const soloProjects = [
     {
@@ -63,15 +62,40 @@ const Portfolio = () => {
         "Simple Employee Management System which can be used to manage employees .For Adding,Updating,Search,Delete,Pagination",
       technologies: "Html | css | Javascript | React | SpringBoot | PostgreSQL",
       github: "https://github.com/Dharun1504/Employee_Management_System",
-    }
+    },
   ];
+
+  const fadeIn = (direction = 'up', duration = 0.3) => {
+    return {
+      hidden: {
+        opacity: 0,
+        y: direction === 'up' ? 80 : 0,
+        x: direction === 'left' ? -100 : 0,
+      },
+      show: {
+        opacity: 1,
+        y: 0,
+        x: 0,
+        transition: {
+          duration: duration,
+        },
+      },
+    };
+  };
 
   return (
     <section id="portfolio">
       <h2>Projects</h2>
       <div className="container portfolio__container">
         {soloProjects.map((pro) => (
-          <article className="portfolio__item" key={pro.id}>
+          <motion.article
+            className="portfolio__item"
+            key={pro.id}
+            variants={fadeIn('up', 1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <div className="portfolio__item-image">
               <img src={pro.img} alt={pro.title} />
             </div>
@@ -89,9 +113,8 @@ const Portfolio = () => {
               >
                 GitHub
               </a>
-              
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>
