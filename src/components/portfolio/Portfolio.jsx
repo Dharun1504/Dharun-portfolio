@@ -5,7 +5,7 @@ import IMG2 from "../../assets/crick.png";
 import IMG3 from "../../assets/music_recommend.png";
 import IMG4 from "../../assets/prison.jpg";
 import IMG5 from "../../assets/music_lib.png";
-// import IMG6 from "../../assets/Project4.jpg";
+import IMG6 from "../../assets/ems.png";
 import React from "react";
 
 //Portfolio function
@@ -55,15 +55,15 @@ const Portfolio = () => {
       technologies: "Python | MySQL |Tkinter",
       github: "https://github.com/Dharun1504/music-library-management-system",
     },
-    // {
-    //   id: 6,
-    //   title: "Fs Poster Website",
-    //   img: IMG6,
-    //   description:
-    //     "Real-world group project which is still in progress and will provide educational platform for future young developers",
-    //   technologies: "Html | Scss | Javascript",
-    //   github: "https://github.com/Rasif-Taghizada/Fs-Poster-Project",
-    // },
+    {
+      id: 6,
+      title: "Employee Management System",
+      img: IMG6,
+      description:
+        "Simple Employee Management System which can be used to manage employees .For Adding,Updating,Search,Delete,Pagination",
+      technologies: "Html | css | Javascript | React | SpringBoot | PostgreSQL",
+      github: "https://github.com/Dharun1504/Employee_Management_System",
+    }
   ];
 
   return (
